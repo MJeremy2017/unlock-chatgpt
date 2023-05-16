@@ -44,13 +44,19 @@
     <script>
         $(document).ready(function(){
             $("#generate").click(function(){
+                // Disable the button
+                $(this).prop("disabled", true);
+
                 $.post("/generate",
                 {
                     text: $("#input").val()
                 },
                 function(data, status){
-                    var formattedData = JSON.stringify(JSON.parse(data), null, 4);
+                    var formattedData = JSON.stringify(JSON.parse(data), null, 2);
                     $("#output").val(formattedData);
+
+                    // Re-enable the button
+                    $("#generate").prop("disabled", false);
                 });
             });
         });
