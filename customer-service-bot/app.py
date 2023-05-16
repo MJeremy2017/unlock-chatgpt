@@ -16,9 +16,9 @@ def generate():
     return json.dumps(result)
 
 
-def foo(input: str):
+def foo(input: str) -> str:
     # Your implementation here
-    pass
+    return "Hello"
 
 
 if __name__ == '__main__':
