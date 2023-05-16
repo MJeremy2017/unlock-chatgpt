@@ -1,8 +1,7 @@
 import os
 
 import requests
-from flask import Flask, request, render_template
-import json
+from flask import Flask, request, render_template, jsonify
 import logging
 
 app = Flask(__name__)
@@ -20,7 +19,7 @@ def home():
 def generate():
     data = request.form['text']
     result = get_customer_service_response(data)
-    return json.dumps(result)
+    return jsonify(result)
 
 
 def extract_content_from_response(response: requests.Response) -> str:

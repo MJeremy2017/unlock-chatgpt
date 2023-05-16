@@ -49,7 +49,8 @@
                     text: $("#input").val()
                 },
                 function(data, status){
-                    $("#output").val(JSON.stringify(data));
+                    var formattedData = JSON.stringify(JSON.parse(data), null, 4);
+                    $("#output").val(formattedData);
                 });
             });
         });
