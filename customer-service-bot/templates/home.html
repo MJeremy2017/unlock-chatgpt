@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Service Bot</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .textbox {
+            width: 100%;
+            height: 800px; /* adjust as per your requirement */
+            margin: 2%;
+        }
+        .button {
+            display: block;
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .box-container {
+            width: 48%; /* adjust as per your requirement */
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#generate").click(function(){
+                $.post("/generate",
+                {
+                    text: $("#input").val()
+                },
+                function(data, status){
+                    $("#output").val(JSON.stringify(data));
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Customer Service Bot</h1>
+    <div class="container">
+        <div class="box-container">
+            <textarea id="input" class="textbox"></textarea>
+            <button id="generate" class="button">Generate</button>
+        </div>
+        <div class="box-container">
+            <textarea id="output" class="textbox"></textarea>
+        <div>
+    </div>
+</body>
+</html>
