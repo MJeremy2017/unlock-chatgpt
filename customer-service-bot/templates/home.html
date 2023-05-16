@@ -35,6 +35,9 @@
             font-family: 'Roboto Slab', serif;
             font-size: 1.2em;
         }
+        .button-clicked {
+            box-shadow: inset 0 0 20px #000000;
+        }
         .box-container {
             width: 48%;
             text-align: center;
@@ -44,8 +47,8 @@
     <script>
         $(document).ready(function(){
             $("#generate").click(function(){
-                // Disable the button
-                $(this).prop("disabled", true);
+                // Add the .button-clicked class
+                $(this).addClass("button-clicked").prop("disabled", true);
 
                 $.post("/generate",
                 {
@@ -55,8 +58,8 @@
                     var formattedData = JSON.stringify(JSON.parse(data), null, 2);
                     $("#output").val(formattedData);
 
-                    // Re-enable the button
-                    $("#generate").prop("disabled", false);
+                    // Remove the .button-clicked class
+                    $("#generate").removeClass("button-clicked").prop("disabled", false);
                 });
             });
         });
