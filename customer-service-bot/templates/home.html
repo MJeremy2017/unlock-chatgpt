@@ -2,15 +2,22 @@
 <html>
 <head>
     <title>Customer Service Bot</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
     <style>
         body {
             text-align: center;
+        }
+        h1 {
+            font-family: 'Roboto Slab', serif;
+            color: #4A235A;
+            text-shadow: 2px 2px #FFC300;
+            font-size: 3em;
         }
         .container {
             display: flex;
             justify-content: space-between;
             margin: 0 auto;
-            max-width: 1000px; /* or whatever maximum width you prefer */
+            max-width: 1000px;
         }
         .textbox {
             width: 100%;
@@ -19,14 +26,18 @@
         }
         .button {
             display: block;
-            background-color: blue;
-            color: white;
+            background-color: white;
+            color: black;
             padding: 10px;
-            margin: 10px auto; /* this centers the button */
+            margin: 10px auto;
+            border-radius: 12px; /* this makes the button rounded */
+            border: 2px solid #4A235A; /* this adds a border to the button */
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.2em;
         }
         .box-container {
             width: 48%;
-            text-align: center; /* this centers the button */
+            text-align: center;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
