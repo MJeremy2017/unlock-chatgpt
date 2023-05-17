@@ -1,13 +1,12 @@
 import os
-
-import requests
 from flask import Flask, request, render_template, jsonify
 import logging
+import openai
 
 app = Flask(__name__)
 app.logger.setLevel(logging.INFO)
 endpoint = "https://api.openai.com/v1/chat/completions"
-API_KEY = os.getenv("OPENAI_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 @app.route('/')
@@ -22,8 +21,8 @@ def generate():
     return jsonify(result)
 
 
-def extract_content_from_response(response: requests.Response) -> str:
-    return response.json()['choices'][0]['message']['content']
+def extract_content_from_response(response) -> str:
+    return response['choices'][0]['message']['content']
 
 
 def format_prompt(review):
@@ -45,24 +44,21 @@ def format_prompt(review):
 
 
 def get_customer_service_response(review: str) -> str:
-    headers = {'Authorization': "Bearer {key}".format(key=API_KEY)}
     prompt = format_prompt(review)
-    print(prompt)
-    data = {
-        "model": "gpt-3.5-turbo",
-        "messages": [
+    app.logger.info(prompt)
+
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
             {"role": "system", "content": "You are a customer service that is patient and nice"},
             {"role": "user", "content": prompt}
-        ]
-    }
-
-    response = requests.post(url=endpoint, headers=headers, json=data)
-    if response.ok:
-        app.logger.info('Request successful')
-        content = extract_content_from_response(response)  # If the response is JSON
-        app.logger.info(content)
-        return content
-    app.logger.info(f'Request failed with status code', response.status_code, response.text)
+        ],
+        temperature=0.8
+    )
+    app.logger.info('Request successful')
+    content = extract_content_from_response(response)  # If the response is JSON
+    app.logger.info(content)
+    return content
 
 
 if __name__ == '__main__':
