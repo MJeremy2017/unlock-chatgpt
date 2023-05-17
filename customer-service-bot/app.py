@@ -56,7 +56,7 @@ def get_customer_service_response(review: str) -> str:
         temperature=0.8
     )
     app.logger.info('Request successful')
-    content = extract_content_from_response(response)  # If the response is JSON
+    content = extract_content_from_response(response)
     app.logger.info(content)
     return content
 
