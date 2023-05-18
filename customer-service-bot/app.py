@@ -16,7 +16,10 @@ def home():
 
 @app.route('/generate', methods=['POST'])
 def generate():
+    # the textarea is sent in form data format
     data = request.form['text']
+    # for local testing
+    # data = request.get_json()['text']
     result = get_customer_service_response(data)
     return jsonify(result)
 
