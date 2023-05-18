@@ -62,4 +62,4 @@ def get_customer_service_response(review: str) -> str:
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, load_dotenv=True)
