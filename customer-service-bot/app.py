@@ -5,7 +5,6 @@ import openai
 
 app = Flask(__name__)
 app.logger.setLevel(logging.INFO)
-endpoint = "https://api.openai.com/v1/chat/completions"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
