@@ -1,5 +1,7 @@
 # Unlock Chatgpt
 
+Checkout the [Course](https://www.udemy.com/course/unlock-chatgpt-mastering-prompt-engineering-api/) here!
+
 - [ChatGPT with code](./chatgpt-with-code)
 - [ChatGPT as data scientist](./chatgpt-as-data-scientist)
 - [Customer service bot](./customer-service-bot)
