@@ -1,4 +1,5 @@
-# Unlock Chatgpt
+# Unlock ChatGPT:  Mastering Prompt Engineering & API
+Deep-Dive into ChatGPT: A Complete Journey from ChatGPT Basics to Expert API Usage.
 
 ## Checkout my full Udemy Course [here](https://www.udemy.com/course/unlock-chatgpt-mastering-prompt-engineering-api/)!
 
