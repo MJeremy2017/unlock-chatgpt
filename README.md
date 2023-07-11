@@ -1,10 +1,8 @@
 # Unlock ChatGPT:  Mastering Prompt Engineering & API
 Deep-Dive into ChatGPT: A Complete Journey from ChatGPT Basics to Expert API Usage.
 
-## Course now on promotion at only 9.99$. Use the link [here](https://www.udemy.com/course/unlock-chatgpt-mastering-prompt-engineering-api/?couponCode=0926EFC52825B01CD95A).
+## Course now on promotion at only 9.99$. Use the link [here](https://www.udemy.com/course/unlock-chatgpt-mastering-prompt-engineering-api/?couponCode=93ECFE77A2D724951666).
 
-
-**Note: Promotion Expires on 06/17/2023 7:02 AM PDT (GMT -7).**
 
 
 ## Checkout the full Udemy Course [here](https://www.udemy.com/course/unlock-chatgpt-mastering-prompt-engineering-api/)!
